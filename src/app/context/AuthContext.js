@@ -4,6 +4,7 @@ import {
   signOut,
   onAuthStateChanged,
   GoogleAuthProvider,
+  FacebookAuthProvider,
 } from "firebase/auth";
 import { auth } from "../firebase";
 
@@ -14,6 +15,11 @@ export const AuthContextProvider = ({ children }) => {
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider);
+  };
+
+  const signInWithFaceBook = () => {
+    const provider = new FacebookAuthProvider();
     signInWithPopup(auth, provider);
   };
 

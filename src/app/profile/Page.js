@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
-import Spinner from "../components/Spinner";
 
 const Page = () => {
   const { user } = UserAuth();
@@ -17,10 +16,8 @@ const Page = () => {
 
   return (
     <div className="p-4">
-      {loading ? (
-        <Spinner />
-      ) : user ? (
-        <p>
+      {user ? (
+        <p >
           Welcome, {user.displayName} - you are logged in to the profile page -
           a protected route.
         </p>
